@@ -1,0 +1,13 @@
+[ui]
+username = muraoka-edo <dice.k.edo+muraoka-edo@gmail.com>
+editor = vim
+
+[extensions]
+color =
+graphlog =
+mq =
+pager = 
+progress =
+rebase =
+record =
+transplant =

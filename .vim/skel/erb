@@ -1,0 +1,18 @@
+# coding: utf-8
+  
+# sample
+<% require 'date' %>
+<% name = 'foo' %>
+<h1>ERB TestPage</h1>
+<p>name: <%= name %></p>
+<p>today: <%= Date.today %></p>
+# coding: utf-8
+  
+<% people = %W{ foo bar baz } %>
+<u1>
+<% people.each do |p| %>
+  <% if /^foo$/ =~ p %>
+    <li>match: <%= p %></li>
+  <% end %>
+<% end %>
+</u1>

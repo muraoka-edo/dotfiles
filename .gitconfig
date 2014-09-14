@@ -1,0 +1,10 @@
+[user]
+	name = muraoka-edo
+	mail = dice.k.edo+muraoka-edo@gmail.com
+[color]
+	ui     = true
+    diff   = auto
+    branch = auto
+    grep   = auto
+    interactive = auto
+
