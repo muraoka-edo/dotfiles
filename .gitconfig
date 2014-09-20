@@ -1,10 +1,23 @@
-[user]
-	name = muraoka-edo
-	mail = dice.k.edo+muraoka-edo@gmail.com
+[include]
+    path   = .gitconfig.local
+
+[core]
+    autoCRLF = false
+    editor = vim -c \"set fenc=utf-8\"
+    pager = 
+
 [color]
-	ui     = true
+    ui     = auto
     diff   = auto
     branch = auto
     grep   = auto
     interactive = auto
 
+[alias]
+    br = branch
+    co = checkout
+    ci = commit
+    st = status -s -b
+    df = diff --color-words --ignore-space-change
+    lg = log --name-status --decorate --branches --tags --remotes
+    hist  = log --name-status --graph --date=short --format=\"%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)\"

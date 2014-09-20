@@ -12,8 +12,8 @@ if [ $? -ne 0 ]; then
     ssh-add ~/.ssh/identity
 fi
 
-# export LANG=ja_JP.UTF-8
-export LANG=C
+export LANG=ja_JP.UTF-8
+#export LANG=C
 
 # Shell Environment
 set -o vi

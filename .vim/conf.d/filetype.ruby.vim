@@ -15,7 +15,7 @@ au BufNewFile,BufRead *.{erb,rhtml,rb}{,.in} set tabstop=2 shiftwidth=2 fileenco
 "Skelton
 augroup SkeletonAu
     autocmd!
-    autocmd BufNewFile *_spec.rb   0r ~/dotfiles/.vim/skel/rspec
+    autocmd BufNewFile *_spec.rb  0r ~/dotfiles/.vim/skel/rspec
     autocmd BufNewFile !*_spec.rb *.rb   0r ~/dotfiles/.vim/skel/rb
     autocmd BufNewFile *.erb  0r ~/dotfiles/.vim/skel/erb
     augroup END
