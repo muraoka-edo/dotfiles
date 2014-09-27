@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly DOT_FILES=( .bashrc .bash_profile .vimrc .gitconfig .hgrc .rspec .gemrc )
+readonly DOT_FILES=( .bashrc .bash_profile .vimrc .gitconfig .hgrc .rspec .gemrc .caprc )
 readonly DOT_DIRS=( .vim )
 
 for file in ${DOT_FILES[@]}

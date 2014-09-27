@@ -1,10 +1,10 @@
 [include]
-    path   = .gitconfig.local
+    path = ~/dotfiles/.gitconfig.local
 
 [core]
     autoCRLF = false
-    editor = vim -c \"set fenc=utf-8\"
-    pager = 
+    editor   = vim -c \"set fenc=utf-8\"
+    pager    = 
 
 [color]
     ui     = auto
