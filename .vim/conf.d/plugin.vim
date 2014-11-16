@@ -40,9 +40,3 @@ let g:neosnippet#snippets_directory = [
   \'~/dotfiles/.vim/conf.d/bundle/serverspec-snippets',
   \]
 
-"Color (solarized)
-if filereadable(expand('~/dotfiles/.vim/conf.d/bundle/vim-colors-solarized/colors/solarized.vim'))
-  syntax enable
-  set background=dark
-  colorscheme solarized
-endif

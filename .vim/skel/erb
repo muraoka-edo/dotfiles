@@ -4,6 +4,7 @@
 <p>name: <%= name %></p>
 <p>today: <%= Date.today %></p>
   
+<ul>
 <% people = %W{ foo bar baz } %>
 <% people.each do |p| %>
   <% if /^foo$/ =~ p %>

@@ -6,7 +6,6 @@ neosnippet.vim
 open-browser.vim
 rails.vim
 serverspec-snippets
-vim-colors-solarized
 vim-endwise
 vim-localrc
 vim-matchit

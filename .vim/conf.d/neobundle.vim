@@ -3,7 +3,9 @@ filetype plugin indent off
 
 if has('vim_starting')
   set runtimepath+=~/dotfiles/.vim/conf.d/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/dotfiles/.vim/conf.d/bundle/'))
+  call neobundle#begin(expand('~/dotfiles/.vim/conf.d/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
 endif
 
 NeoBundle 'Shougo/neobundle.vim'
@@ -16,7 +18,6 @@ NeoBundle 'tpope/vim-endwise.git'
 NeoBundle 'rails.vim'
 NeoBundle 'Gist.vim'
 NeoBundle 'open-browser.vim'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'glidenote/serverspec-snippets'
 
 filetype plugin indent on
