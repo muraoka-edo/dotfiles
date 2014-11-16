@@ -1,6 +1,16 @@
 #!/bin/bash
 
-readonly DOT_FILES=( .bashrc .bash_profile .vimrc .gitconfig .hgrc .rspec .gemrc .caprc )
+ARCH=$(uname)
+if [ "${ARCH}" = "Linux" ]; then
+  rpm -qa | grep -q lua || echo "[Warn] Not install: lua"
+  rpm -qa | grep -q lua-devel || echo "[Warn] Not install: lua-devel"
+elif [ "${ARCH}" = "Darwin" ]; then
+  edo$ brew list | grep -q lua || echo "[Warn] Not install: lua"
+fi
+
+vim --version | grep -q '+lua' || echo "[Warn] Vim can not load '+lua'. Check your vim version 7.4 or later"
+
+readonly DOT_FILES=( .bashrc .bash_profile .bash.d .vimrc .gitconfig .hgrc .rspec .gemrc .caprc )
 readonly DOT_DIRS=( .vim )
 
 for file in ${DOT_FILES[@]}

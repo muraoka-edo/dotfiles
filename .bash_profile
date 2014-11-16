@@ -5,34 +5,36 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-# BitBucket
+#export LANG=C
+export LANG=ja_JP.UTF-8
+
+# Shell Environment
+set -o vi
+
+# GitHub/BitBucket
 ssh-add -l >&/dev/null
 if [ $? -ne 0 ]; then
     eval "$(ssh-agent)"
     ssh-add ~/.ssh/identity
 fi
 
-export LANG=ja_JP.UTF-8
-#export LANG=C
-
-# Shell Environment
-set -o vi
-
-# Setting for prompt
-vcprompt_branch() {
-    which vcprompt >/dev/null 2>&1 && vcprompt -f ' (%n:%b)'
-}
-
-ARCH=$(uname)
-if [ "${ARCH}" = "Linux" ]; then
-    [ -f "/etc/bash_completion.d/git" ] && . /etc/bash_completion.d/git
-elif [ "${ARCH}" = "Darwin" ]; then
-    [ -f /opt/local/share/bash-completion/completions/git ] && . /opt/local/share/bash-completion/completions/git
+# Ruby
+if [ -d "$HOME/.rbenv/bin" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+elif [ -d "/opt/rbenv/shims/ruby" ]; then
+  export PATH="/opt/rbenv/shims/ruby:$PATH"
+  eval "$(rbenv init -)"
 fi
 
-if [ -f $BASH_COMPLETION_DIR/git ]; then
-    git_branch=$(__git_ps1 '(git:%s)')
-    export PS1="\[\033[01;36m\]\u@\h \$(git_branch)\$(vcprompt_branch)\[\033[0;32m\]\n\$ "
-fi
+# PS1(git)
+# - Install
+# cd ~/dotfiles/.bash.d; pwd
+#$ wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
+# $ wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
+BASH_COMPLETION_DIR="$HOME/dotfiles/.bash.d"
+  . ${BASH_COMPLETION_DIR}/git-prompt.sh
+  . ${BASH_COMPLETION_DIR}/git-completion.bash
 
-# ex) http://qiita.com/note109/items/2adb71024d675bc43177
+export PS1='[\[\033[36m\]\u\[\033[0;37m\]@\h\[\033[00m\]:\[\033[37m\]\w\[\033[36m\]$(__git_ps1)\[\033[00m\]]\n\$ '
+
