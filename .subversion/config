@@ -6,15 +6,15 @@ enable-auto-props = yes
 
 ### Section for configuring automatic properties.
 [auto-props]
-*.sh = svn:eol-style=LF;svn:executable
-*.rb = svn:eol-style=LF;svn:executable
-*.pl = svn:eol-style=LF;svn:executable
-*.py = svn:eol-style=LF;svn:executable
-*.conf = svn:eol-style=LF
-*.sql = svn:eol-style=LF
-*.htm* = svn:eol-style=LF
-*.prop* = svn:eol-style=LF
-*.y*ml = svn:eol-style=LF
-*.json = svn:eol-style=LF
-*.md = svn:eol-style=LF
-*.markdown = svn:eol-style=LF
+*.sh = svn:eol-style=native;svn:executable
+*.rb = svn:eol-style=native;svn:executable
+*.pl = svn:eol-style=native;svn:executable
+*.py = svn:eol-style=native;svn:executable
+*.conf = svn:eol-style=native
+*.sql = svn:eol-style=native
+*.htm* = svn:eol-style=native
+*.prop* = svn:eol-style=native
+*.y*ml = svn:eol-style=native
+*.json = svn:eol-style=native
+*.md = svn:eol-style=native
+*.markdown = svn:eol-style=native
