@@ -36,5 +36,17 @@ BASH_COMPLETION_DIR="$HOME/dotfiles/.bash.d"
   . ${BASH_COMPLETION_DIR}/git-prompt.sh
   . ${BASH_COMPLETION_DIR}/git-completion.bash
 
-export PS1='[\[\033[36m\]\u\[\033[0;37m\]@\h\[\033[00m\]:\[\033[37m\]\w\[\033[36m\]$(__git_ps1)\[\033[00m\]]\n\$ '
+# http://hocuspokus.net/2009/07/add-git-and-svn-branch-to-bash-prompt/
+parse_svn_repository_root() {
+  svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
+}
+parse_svn_branch() {
+  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk '{print " (svn::"$1")" }'
+}
+parse_svn_url() {
+  svn info 2>/dev/null | sed -ne 's#^URL: ##p'
+}
+
+#export
+PS1='[\[\033[36m\]\u\[\033[0;37m\]@\h\[\033[00m\]:\[\033[37m\]\w\[\033[36m\]$(__git_ps1)$(parse_svn_branch)\[\033[00m\]]\n\$ '
 
