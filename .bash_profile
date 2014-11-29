@@ -8,6 +8,9 @@ fi
 #export LANG=C
 export LANG=ja_JP.UTF-8
 
+# bash.d
+BASHD="$HOME/dotfiles/.bash.d"
+
 # Shell Environment
 set -o vi
 
@@ -35,9 +38,8 @@ fi
 # cd ~/dotfiles/.bash.d; pwd
 #$ wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 # $ wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
-BASH_COMPLETION_DIR="$HOME/dotfiles/.bash.d"
-  . ${BASH_COMPLETION_DIR}/git-prompt.sh
-  . ${BASH_COMPLETION_DIR}/git-completion.bash
+. ${BASHD}/git-prompt.sh
+. ${BASHD}/git-completion.bash
 
 # http://hocuspokus.net/2009/07/add-git-and-svn-branch-to-bash-prompt/
 parse_svn_repository_root() {
@@ -50,6 +52,11 @@ parse_svn_url() {
   svn info 2>/dev/null | sed -ne 's#^URL: ##p'
 }
 
-#export
+# Prompt
 PS1='[\[\033[36m\]\u\[\033[0;37m\]@\h\[\033[00m\]:\[\033[37m\]\w\[\033[36m\]$(__git_ps1)$(parse_svn_branch)\[\033[00m\]]\n\$ '
 
+# is_mac?
+ARCH=$(uname)
+if [ "$ARCH" = "Darwin" ]; then
+  . ${BASHD}/mac_env
+fi

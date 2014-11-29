@@ -1,0 +1,4 @@
+export POSTGRES_HOME=/usr/local/opt/postgresql/
+export PGLIB=${POSTGRES_HOME}/lib
+export PGDATA=/usr/local/var/postgres
+export PATH=${POSTGRES_HOME}/bin:${PATH}

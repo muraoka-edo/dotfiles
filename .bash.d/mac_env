@@ -1,0 +1,14 @@
+# Boot2docker
+which docker >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  if [ ! "$DOCKER_HOST" ]; then $(boot2docker shellinit);fi
+fi
+
+# PostgreSQL
+which psql >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  export POSTGRES_HOME=/usr/local/opt/postgresql/
+  export PGLIB=${POSTGRES_HOME}/lib
+  export PGDATA=/usr/local/var/postgres
+  export PATH=${POSTGRES_HOME}/bin:${PATH}
+fi
