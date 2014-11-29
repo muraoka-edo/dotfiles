@@ -10,8 +10,7 @@ fi
 
 vim --version | grep -q '+lua' || echo "[Warn] Vim can not load '+lua'. Check your vim version 7.4 or later"
 
-readonly DOT_FILES=( .bashrc .bash_profile .bash.d .vimrc .gitconfig .hgrc
-.rspec .gemrc .caprc )
+readonly DOT_FILES=( .bashrc .bash_profile .bash.d .vimrc .gitconfig .hgrc .rspec .gemrc .caprc .psqlrc)
 readonly DOT_DIRS=( .vim .subversion )
 
 for file in ${DOT_FILES[@]}
