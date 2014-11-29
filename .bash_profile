@@ -11,6 +11,9 @@ export LANG=ja_JP.UTF-8
 # Shell Environment
 set -o vi
 
+# Alias
+alias vi=$(which vim)
+
 # GitHub/BitBucket
 ssh-add -l >&/dev/null
 if [ $? -ne 0 ]; then

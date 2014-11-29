@@ -34,9 +34,7 @@ done
 
 for dir in ${DOT_DIRS[@]}
 do
-  _lnk=$( echo ${dir} | sed -e 's/^\.//g' )
-  lnk=$( echo ${_lnk} | sed -e 's/$/.d/g' )
 
-  ln -si ~/dotfiles/${lnk} ~/${dir}
+  ln -si ~/dotfiles/${dir} ~/${dir}
   echo "[Make]: Symlink: ~/${dir}"
 done
