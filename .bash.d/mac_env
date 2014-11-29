@@ -1,7 +1,41 @@
+# Gnu
+which greadlink >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  alias readlink='greadlink'
+fi
+
+which gdate >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  alias date='gdate'
+fi
+
+which gsed >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  alias sed='gsed'
+fi
+
+which gawk >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  alias awk='gawk'
+fi
+
 # Boot2docker
 which docker >/dev/null 2>&1
 if [ $? -eq 0 ]; then
-  if [ ! "$DOCKER_HOST" ]; then $(boot2docker shellinit);fi
+  if [ ! "$DOCKER_HOST" ]; then
+    ps -ef | grep -q boot2docker-vm
+    if [ $? -eq 0 ]; then $(boot2docker shellinit);fi
+  fi
+fi
+
+
+# PostgreSQL
+which psql >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  export POSTGRES_HOME=/usr/local/opt/postgresql/
+  export PGLIB=${POSTGRES_HOME}/lib
+  export PGDATA=/usr/local/var/postgres
+  export PATH=${POSTGRES_HOME}/bin:${PATH}
 fi
 
 # PostgreSQL
