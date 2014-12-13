@@ -34,8 +34,8 @@ elif [ -d "/opt/rbenv/shims/ruby" ]; then
 fi
 
 # Python
-if [ -d "$HOME/.pyenv/bin" ]; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
+if [ -d "$HOME/.pyenv/shims" ]; then
+  export PATH="$HOME/.pyenv/shims:$PATH"
   eval "$(pyenv init -)"
 elif [ -d "/opt/pyenv/shims/python" ]; then
   export PATH="/opt/pyenv/shims/python:$PATH"
