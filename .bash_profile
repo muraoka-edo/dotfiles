@@ -33,6 +33,15 @@ elif [ -d "/opt/rbenv/shims/ruby" ]; then
   eval "$(rbenv init -)"
 fi
 
+# Python
+if [ -d "$HOME/.pyenv/bin" ]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+elif [ -d "/opt/pyenv/shims/python" ]; then
+  export PATH="/opt/pyenv/shims/python:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 # PS1(git)
 # - Install
 # cd ~/dotfiles/.bash.d; pwd
