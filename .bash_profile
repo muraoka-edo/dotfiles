@@ -16,6 +16,7 @@ set -o vi
 
 # Alias
 alias vi=$(which vim)
+alias grep='grep --color'
 
 # GitHub/BitBucket
 ssh-add -l >&/dev/null

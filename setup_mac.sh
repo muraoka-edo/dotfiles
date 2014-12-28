@@ -50,6 +50,7 @@ cask install java7
 # IDE
 cask install eclipse-ide
 cask install sourcetree
+install gcc gdb
 
 # VM
 cask install virtualbox
@@ -65,6 +66,10 @@ $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 $ brew update
 $ brew bundle
 $ echo "JAVA_HOME=$(/usr/libexec/java_home -v 1.8)" > ~/.bash_profile
+
+$ sudo port install gcc49 gdb
+$ sudo port select --set gcc mp-gcc49
+$ port select --list gcc
 ---------------------------
 note:
 http://tech.basicinc.jp/Mac/2014/04/20/mac_app_engineer/

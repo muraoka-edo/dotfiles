@@ -1,3 +1,7 @@
+# Aliase
+alias ll='ls -l'
+alias eject='drutil eject'
+
 # Gnu
 which greadlink >/dev/null 2>&1
 if [ $? -eq 0 ]; then
