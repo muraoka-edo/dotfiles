@@ -27,19 +27,19 @@ fi
 
 # Ruby
 if [ -d "$HOME/.rbenv/bin" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 elif [ -d "/opt/rbenv/shims/ruby" ]; then
-  export PATH="/opt/rbenv/shims/ruby:$PATH"
+  export PATH="/opt/rbenv/shims:$PATH"
   eval "$(rbenv init -)"
 fi
 
-# Python
+# Pyton
 if [ -d "$HOME/.pyenv/shims" ]; then
-  export PATH="$HOME/.pyenv/shims:$PATH"
+  export PATH="$HOME/.pyenv/shims:$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
 elif [ -d "/opt/pyenv/shims/python" ]; then
-  export PATH="/opt/pyenv/shims/python:$PATH"
+  export PATH="/opt/pyenv/shims:$PATH"
   eval "$(pyenv init -)"
 fi
 
